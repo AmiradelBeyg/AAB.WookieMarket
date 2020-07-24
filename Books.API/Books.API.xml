@@ -1,0 +1,183 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Books.API</name>
+    </assembly>
+    <members>
+        <member name="T:Books.API.Controllers.BookController">
+            <summary>
+             a class controller for books
+            </summary>
+        </member>
+        <member name="M:Books.API.Controllers.BookController.#ctor(Microsoft.AspNetCore.Hosting.IWebHostEnvironment,Books.API.BooksContext,Microsoft.AspNetCore.Http.IHttpContextAccessor)">
+            <summary>
+            Contractor.
+            </summary>
+        </member>
+        <member name="M:Books.API.Controllers.BookController.GetAsync(System.Int32,System.Int32)">
+            <summary>
+             Returns a collection of books
+            </summary>
+        </member>
+        <member name="M:Books.API.Controllers.BookController.GetByIdAsync(System.Guid)">
+            <summary>
+             Returns a books
+            </summary>
+        </member>
+        <member name="M:Books.API.Controllers.BookController.AddAsync(Books.API.Model.BookRequest)">
+             <summary>
+             Creates a new book.
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 POST /books
+                 {
+                    "id": 1,
+                    "title": "The Adventures of Tom Sawyer",
+                    "Author": "Mark Twain",
+                    "Description" : "a description or summery of the book"
+                    "Price" : "50"
+                 }
+            
+             </remarks>
+             <param name="book"></param>
+             <returns>A newly created book</returns>
+             <response code="201">Returns the newly created book</response>
+             <response code="400">If the book is null</response>  
+        </member>
+        <member name="M:Books.API.Controllers.BookController.UpdateAsync(Books.API.Model.BookRequest)">
+             <summary>
+             Edits a book.
+             </summary>
+                     /// <remarks>
+             Sample request:
+            
+                 PUT /books
+                 {
+                    "id": 1,
+                    "title": "The Adventures of Tom Sawyer",
+                    "Author": "Mark Twain",
+                    "Description" : "a description or summery of the book"
+                    "Price" : "50"
+                 }
+            
+             </remarks>
+             <param name="book"></param>
+             <returns>A newly created book</returns>
+             <response code="201">Returns the newly created book</response>
+             <response code="404">The Book was not found</response>
+        </member>
+        <member name="M:Books.API.Controllers.BookController.DeleteAsync(System.Guid)">
+            <summary>
+            Deletes a book.
+            </summary>
+            <param name="id"></param> 
+        </member>
+        <member name="P:Books.API.Entity.BookEntity.Title">
+            <summary>
+            Title of a book
+            </summary>
+        </member>
+        <member name="P:Books.API.Entity.BookEntity.Author">
+            <summary>
+            Name of Author(it could be change with a AuthorId from Author model in the future).
+            </summary>
+        </member>
+        <member name="P:Books.API.Entity.BookEntity.Description">
+            <summary>
+            A summery of the book and information about it.
+            </summary>
+        </member>
+        <member name="P:Books.API.Entity.BookEntity.Price">
+            <summary>
+            Probably Wookies use the US dollar.
+            </summary>
+        </member>
+        <member name="T:Books.API.Model.BookRequest">
+            <Summary>
+             Book request
+            </Summary>
+        </member>
+        <member name="P:Books.API.Model.BookRequest.Id">
+            <summary>
+            Id of book (It is used in getbyId)
+            </summary>
+        </member>
+        <member name="P:Books.API.Model.BookRequest.Title">
+            <summary>
+            Title of a book.
+            </summary>
+        </member>
+        <member name="P:Books.API.Model.BookRequest.Author">
+            <summary>
+            Author of the book.
+            </summary>
+        </member>
+        <member name="P:Books.API.Model.BookRequest.Description">
+            <summary>
+            Book description or summery.
+            </summary>
+        </member>
+        <member name="P:Books.API.Model.BookRequest.CoverImage">
+            <summary>
+            The book's cover image file.
+            </summary>
+        </member>
+        <member name="P:Books.API.Model.BookRequest.Price">
+            <summary>
+            Price of a book(probably in the US dollar)
+            </summary>
+        </member>
+        <member name="T:Books.API.Model.BookResponse">
+            <Summary>
+             Book response
+            </Summary>
+        </member>
+        <member name="P:Books.API.Model.BookResponse.Id">
+            <summary>
+            Id of book.
+            </summary>
+        </member>
+        <member name="P:Books.API.Model.BookResponse.Title">
+            <summary>
+            Title of a book.
+            </summary>
+        </member>
+        <member name="P:Books.API.Model.BookResponse.Author">
+            <summary>
+            Author of the book.
+            </summary>
+        </member>
+        <member name="P:Books.API.Model.BookResponse.Description">
+            <summary>
+            Book description or summery.
+            </summary>
+        </member>
+        <member name="P:Books.API.Model.BookResponse.CoverImageURL">
+            <summary>
+            URL of book's cover image
+            </summary>
+        </member>
+        <member name="P:Books.API.Model.BookResponse.Price">
+            <summary>
+            Price of a book(probably in the US dollar)
+            </summary>
+        </member>
+        <member name="P:Books.API.Model.PaginatedItemsViewModel`1.PageIndex">
+            <summary>
+            index of return page in get methods with more than one record.
+            </summary>
+        </member>
+        <member name="P:Books.API.Model.PaginatedItemsViewModel`1.PageSize">
+            <summary>
+            size of return page of get methods
+            </summary>
+        </member>
+        <member name="P:Books.API.Model.PaginatedItemsViewModel`1.Count">
+            <summary>
+            count of all records
+            </summary>
+        </member>
+    </members>
+</doc>
